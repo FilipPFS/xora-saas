@@ -3,13 +3,31 @@
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setHasScrolled(window.scrollY > 32);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <header className="fixed left-0 top-0 w-full z-50 py-10">
+    <header
+      className={clsx(
+        "fixed left-0 top-0 w-full z-50 py-10 transition-all duration-500 max-lg:py-4",
+        hasScrolled && "py-3 bg-black-100 backdrop-blur-[8px]"
+      )}
+    >
       <div className="container flex h-14 items-center max-lg:px-5">
         <Link href={"/"} className="lg:hidden flex-1 cursor-pointer z-2">
           <Image src={"/images/xora.svg"} width={115} height={45} alt="logo" />
@@ -25,7 +43,7 @@ const Header = () => {
             <nav className="max-lg:relative max-lg:z-2 max-lg:my-auto">
               <ul className="flex max-lg:block max-lg:px-12">
                 <li className="nav-li">
-                  <Link className="nav-link" href={"/"}>
+                  <Link className="nav-link" href={"/#features"}>
                     Features
                   </Link>
                   <div className="dot"></div>
@@ -35,13 +53,15 @@ const Header = () => {
                 </li>
 
                 <li className="nav-logo max-lg:hidden">
-                  <Image
-                    src={"/images/xora.svg"}
-                    width={160}
-                    height={55}
-                    alt="logo"
-                    className="transition-transform duration-500 cursor-pointer"
-                  />
+                  <Link href={"/"}>
+                    <Image
+                      src={"/images/xora.svg"}
+                      width={160}
+                      height={55}
+                      alt="logo"
+                      className="transition-transform duration-500 cursor-pointer"
+                    />
+                  </Link>
                 </li>
                 {/* desktop */}
 
