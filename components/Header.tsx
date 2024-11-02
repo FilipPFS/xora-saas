@@ -47,7 +47,7 @@ const Header = () => {
                     Features
                   </Link>
                   <div className="dot"></div>
-                  <Link className="nav-link" href={"/"}>
+                  <Link className="nav-link" href={"/#pricing"}>
                     Pricing
                   </Link>
                 </li>
