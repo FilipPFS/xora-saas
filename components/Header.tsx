@@ -66,7 +66,7 @@ const Header = () => {
                 {/* desktop */}
 
                 <li className="nav-li">
-                  <Link className="nav-link" href={"/"}>
+                  <Link className="nav-link" href={"/#faq"}>
                     FAQ
                   </Link>
                   <div className="dot"></div>
