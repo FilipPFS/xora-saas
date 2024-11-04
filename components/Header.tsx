@@ -43,11 +43,19 @@ const Header = () => {
             <nav className="max-lg:relative max-lg:z-2 max-lg:my-auto">
               <ul className="flex max-lg:block max-lg:px-12">
                 <li className="nav-li">
-                  <Link className="nav-link" href={"/#features"}>
+                  <Link
+                    onClick={() => setOpen(false)}
+                    className="nav-link"
+                    href={"/#features"}
+                  >
                     Features
                   </Link>
                   <div className="dot"></div>
-                  <Link className="nav-link" href={"/#pricing"}>
+                  <Link
+                    onClick={() => setOpen(false)}
+                    className="nav-link"
+                    href={"/#pricing"}
+                  >
                     Pricing
                   </Link>
                 </li>
@@ -66,11 +74,19 @@ const Header = () => {
                 {/* desktop */}
 
                 <li className="nav-li">
-                  <Link className="nav-link" href={"/#faq"}>
+                  <Link
+                    onClick={() => setOpen(false)}
+                    className="nav-link"
+                    href={"/#faq"}
+                  >
                     FAQ
                   </Link>
                   <div className="dot"></div>
-                  <Link className="nav-link" href={"/"}>
+                  <Link
+                    onClick={() => setOpen(false)}
+                    className="nav-link"
+                    href={"/#download"}
+                  >
                     Download
                   </Link>
                 </li>

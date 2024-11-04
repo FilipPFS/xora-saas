@@ -19,6 +19,8 @@ const config: Config = {
         s3: "#334679",
         s4: "#1959AD",
         s5: "#263466",
+        yellowLight: "#fff700", // light yellow
+        yellowDark: "#ffd700", // dark yellow
         black: {
           DEFAULT: "#000000",
           100: "#05091D",
@@ -85,6 +87,9 @@ const config: Config = {
         280: "0 0 280px",
         256: "0 0 256px",
         100: "0 0 100%",
+      },
+      backgroundImage: {
+        "yellow-gradient": "linear-gradient(90deg, #fff700, #ffd700)",
       },
     },
   },
